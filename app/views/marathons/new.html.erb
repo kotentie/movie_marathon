@@ -1,0 +1,22 @@
+<%= form_for :marathon, url: marathons_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+
+  </p>
+
+  <p>
+    <%= f.label :time_start %><br>
+    <%= f.datetime_field :time_start %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
