@@ -7,8 +7,14 @@ class MarathonsController < ApplicationController
   end
 
   def create
-	@marathon = Marathon.create(params.require(:marathon).permit(:name, :user_id, :duration, :start_time))
-	render text: params[:marathon].inspect
+	@marathon = Marathon.create(params.require(:marathon).permit(:name, :user_id, :duration, :time_start))
+	
+
+	if @marathon.save
+		redirect_to marathon_path(@marathon)
+	else
+		render text: params[:marathon].inspect
+	end
   end
 
 end
