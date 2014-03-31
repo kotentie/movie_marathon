@@ -1,2 +1,5 @@
-<h1>Movies#search</h1>
-<p>Find me in app/views/movies/search.html.erb</p>
+<%= form_tag("/movies/results.html", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
