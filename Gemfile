@@ -39,6 +39,10 @@ end
 #heroku add-on gem
 gem 'rails_12factor' 
 
+#rotten-tomatoes api wrapper
+
+gem 'rottentomatoes'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
