@@ -1,6 +1,7 @@
 MovieM::Application.routes.draw do
  
 
+  get "movies/search"
 get "home/index"
   
 root "home#index"

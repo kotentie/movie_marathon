@@ -17,4 +17,8 @@ class MarathonsController < ApplicationController
 	end
   end
 
+  def show
+  	@marathon = Marathon.find(params[:id])
+  end
+
 end
