@@ -19,6 +19,8 @@ class MarathonsController < ApplicationController
 
   def show
   	@marathon = Marathon.find(params[:id])
-  end
+    @movies = Movie.joins(:likedmovies)
+    p @movies
+  end    
 
 end
