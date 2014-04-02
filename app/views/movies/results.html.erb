@@ -1,3 +1,9 @@
-<h1>
-<%= @movie.title %>
-</h1>
+<table>
+<% @movie.each do |m| %>
+<tr>
+  <td><%= m.title %> </td>
+  <td><%= m.runtime.to_i %> </td>
+  <td><%= link_to 'like', {:controller => 'movies', :action => 'create', :name => m.title, :runtime => m.runtime.to_i}, {:method => :post } %>
+</tr>
+<% end %>
+</table>
