@@ -48,6 +48,11 @@ gem 'rails_12factor'
 
 gem 'rottentomatoes'
 
+#bootstrap
+
+gem "twitter-bootstrap-rails"
+
+
 
 
 # Use ActiveModel has_secure_password

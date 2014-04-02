@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>MovieM</title>
+  <%= stylesheet_link_tag  %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="contianer">
 <div id="user-widget">
   <% if current_user %>
     Welcome <strong><%= current_user.name %></strong>!
@@ -19,6 +21,6 @@
 <%= yield %>
 
 
-
+</div>
 </body>
 </html>
