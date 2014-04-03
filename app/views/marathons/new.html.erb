@@ -1,22 +1,22 @@
-<%= form_for :marathon, url: marathons_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
+<%= form_for :marathon, url: marathons_path, html: {role: "form"} do |f| %>
+ <div class="form-group">
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+  </div>
  
-  <p>
-    <%= f.label :duration %><br>
+<div class="form-group">
+    <%= f.label :duration %>
     <%= f.text_field :duration %>
 
-  </p>
+</div>
 
-  <p>
-    <%= f.label :time_start %><br>
+<div class="form-group">
+    <%= f.label :time_start %>
     <%= f.datetime_field :time_start %>
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
-  </p>
+</div>
  
-  <p>
+
     <%= f.submit %>
-  </p>
+
 <% end %>

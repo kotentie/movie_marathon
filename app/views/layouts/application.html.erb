@@ -2,21 +2,31 @@
 <html>
 <head>
   <title>MovieM</title>
-  <%= stylesheet_link_tag  %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="contianer">
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+
+    <ul class="nav nav-pills">
+    
+    <li> <a href="/">Movie Marathon</a></li>
+
+    <% if current_user %>
+      
+        
+        <li><%= link_to "Find Movies", movie_path('search') %> <li>  
+        <li> <%= link_to "Create a Movie Marathon", new_marathon_path %> </li>
+        <li style="float:right;"><a style="float:right;">Welcome <strong><%= current_user.name %></strong>!<%= link_to "(sign out)", signout_path, id: "sign_out"  %></a></li>
+        
+      
+    <% else %>
+
+      <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+    
+    <% end %>
+  </ul>
 
 <%= yield %>
 

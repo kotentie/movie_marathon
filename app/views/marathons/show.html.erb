@@ -1,14 +1,13 @@
-<h1><%= @marathon.name %></h1><br>
-<h3><%= @marathon.duration %></h3>
-<table>
+<h3>Marathon:<%= @marathon.name %> runtime: <%= @marathon.duration %></h3>
+<table class="table table-hover">
 	<tr>
-		<td><h3> Liked Movies</h3> </td>
+		<td><h3> Suggested Movies for the marathon </h3> </td>
 	</tr>
 	<% @movies.each do |m| %>
 	  <tr>
 	  <td><%= m.name %> </td>
 	  <td><%= m.runtime.to_i %> </td>
-	  <td><%= link_to 'add', {:controller => 'movies', :action => 'create', :name => m.name, :runtime => m.runtime.to_i}, {:method => :post } %>
+	  <td><%= link_to 'like too', {:controller => 'movies', :action => 'create', :name => m.name, :runtime => m.runtime.to_i}, {:method => :post } %>
 	  </tr>
 	<% end %>
 </table>

@@ -1,6 +1,21 @@
 <html>
 <head></head>
 <body>
-<%= link_to "Create a Movie Marathon", new_marathon_path %>
+<table class="table table-hover">
+	<tr>
+  	<th>My Marathons</th>
+  	<th>Duration</th> 
+  	<th>Link</th>
+	</tr>
+	<% if @marathons %>
+		<% @marathons.each do |m| %>
+		  <tr>
+		  <td><%= m.name %> </td>
+		  <td><%= m.duration%> </td>
+		  <td><%= link_to "link", marathon_path(m.id) %>
+		  </tr>
+		<% end %>
+	<%end%>
+</table>
 </body>
 </html>
